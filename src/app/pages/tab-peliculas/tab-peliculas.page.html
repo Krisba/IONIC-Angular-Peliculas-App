@@ -1,0 +1,27 @@
+<ion-content>
+  
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col class="ion-text-center">
+
+        <h3>Estrenos</h3>
+        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <app-slideshows-backdrop [peliculas]="peliculas"></app-slideshows-backdrop>
+  
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col class="ion-text-center">
+
+        <h3>Cartelera</h3>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <app-slideshows-poster [populares]="peliculas"></app-slideshows-poster>
+  
+</ion-content>

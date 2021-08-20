@@ -1,0 +1,44 @@
+<ion-app >
+  
+  <ion-router-outlet></ion-router-outlet>
+    
+    <ion-buttons *ngIf="showHead">
+      <ion-menu-button color="tertiary">
+        <ion-icon slot="start"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+    
+    <ion-menu *ngIf="showHead" side="start" type="overlay" contentId="principal">
+      
+      <ion-header>
+        <ion-toolbar color="tertiary">
+          <ion-title class="ion-text-center">Prex Movies</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      
+      <ion-content id="principal">
+        <ion-list class="list">
+          
+          <ion-menu-toggle>
+            
+            <ion-item button (click)="navigate('main/tabs/tab-peliculas')">
+              <ion-icon color="tertiary" slot="start" name="home"></ion-icon>
+              <ion-label>Inicio</ion-label>
+            </ion-item>
+            
+            <ion-item button (click)="navigate('/favoritos')">
+              <ion-icon color="tertiary" slot="start" name="star"></ion-icon>
+              <ion-label>Mis favoritos</ion-label>
+            </ion-item>
+            
+            <ion-item button (click)="logout()" lines="none">
+              <ion-icon color="tertiary" slot="start" name="log-out"></ion-icon>
+              <ion-label>Cerrar sesión</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+  
+</ion-app>

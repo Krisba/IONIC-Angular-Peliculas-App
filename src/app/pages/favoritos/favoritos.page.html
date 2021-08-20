@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="titulo">Favoritos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item-sliding #slidingItem *ngFor="let pelicula of peliculas | keyvalue; let i = index">
+      <ion-item>
+        <img class="imagen" [src]="pelicula.value.backdrop_path | imagen">
+
+        <ion-row>
+          <ion-col size="12">
+
+            <ion-title class="ion-text-wrap label">{{pelicula.value.title}}</ion-title>
+            <ion-note class="ion-text-wrap">{{pelicula.value.tagline}}</ion-note>
+
+          </ion-col>
+          <ion-rating readonly [(ngModel)]="pelicula.value.vote_average"></ion-rating>
+        </ion-row>
+        
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="tertiary" (click)="verDetalles( pelicula.value, slidingItem )">Editar</ion-item-option>
+      </ion-item-options>
+
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-content>
